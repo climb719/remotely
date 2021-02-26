@@ -4,6 +4,7 @@ require_relative "./remotely/version"
 require_relative "./remotely/cli"
 require_relative "./remotely/api"
 require_relative "./remotely/job"
+require_relative "./remotely/category" 
 
 require 'pry'
 require 'httparty'
