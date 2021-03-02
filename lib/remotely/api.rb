@@ -49,11 +49,7 @@ class API
     #     info = Nokogiri::HTML(hash["description"])
     #    puts info.xpath("//text()").to_s.split.join(' ')   #OR gsub("\n", ' ').squeeze(' ')  #gsub(/\s+/, " ")
 
- 
- 
-    
 end
-
 
 
    #API.get_categories("https://remotive.io/api/remote-jobs/categories")

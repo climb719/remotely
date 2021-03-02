@@ -15,6 +15,8 @@ flow
             - description 
             - url
 classes
+ - Category
+    - responsible for knowing, storing, and listing categories
  - Job 
     - responsible to know about jobs and store jobs
  - CLI 

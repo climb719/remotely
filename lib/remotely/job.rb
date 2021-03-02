@@ -1,4 +1,3 @@
-
 class Job
 
     attr_accessor :title, :company_name, :job_type, :description, :url
@@ -33,17 +32,29 @@ class Job
     end
 
     def self.list_jobs
-         @@all[1..10].map do |job| 
+         @@all[1..15].map do |job| 
      
         puts Rainbow("Job title: #{job.title}").indianred
         puts Rainbow("Company: #{job.company_name}").orange
         puts Rainbow("Job-type: #{job.job_type}").yellow
-        #puts Rainbow("Link:").green 
         info = Nokogiri::HTML("#{job.description}")
         puts Rainbow("Description:" + ' ' + info.xpath("//text()").to_s.split[0..100].join(' ') + "...").green
-        puts Rainbow(TTY::Link.link_to("Apply", "#{job.url}")).bright.blue
+        puts Rainbow(TTY::Link.link_to("For more info or to apply(clickable link)", "#{job.url}")).bright.blue
         end
     end
+
+    
+    def self.list_next_jobs
+        @@all[16..30].map do |job| 
+    
+       puts Rainbow("Job title: #{job.title}").indianred
+       puts Rainbow("Company: #{job.company_name}").orange
+       puts Rainbow("Job-type: #{job.job_type}").yellow
+       info = Nokogiri::HTML("#{job.description}")
+       puts Rainbow("Description:" + ' ' + info.xpath("//text()").to_s.split[0..100].join(' ') + "...").green
+       puts Rainbow(TTY::Link.link_to("For more info or to apply (clickable link)", "#{job.url}")).bright.blue
+       end
+   end
 
 
 end
