@@ -1,11 +1,10 @@
-require 'pry'
-require "nokogiri"
+
 class Job
 
-    attr_accessor :title, :company_name, :job_type, :url, :description
+    attr_accessor :title, :company_name, :job_type, :description, :url
     @@all = [] # use array to access objects in other projects 
     #type and info
-    def initialize(role, employer, type, link, info)
+    def initialize(role, employer, type, info, link)
         @title = role
         @company_name = employer
         @job_type = type
@@ -39,10 +38,10 @@ class Job
         puts Rainbow("Job title: #{job.title}").indianred
         puts Rainbow("Company: #{job.company_name}").orange
         puts Rainbow("Job-type: #{job.job_type}").yellow
-        puts Rainbow("Link: #{job.url}").green
+        #puts Rainbow("Link:").green 
         info = Nokogiri::HTML("#{job.description}")
-        puts Rainbow("Description:" + ' ' + info.xpath("//text()").to_s.split.join(' ')).bright.blue
-        #puts "Description: #{job.description}"
+        puts Rainbow("Description:" + ' ' + info.xpath("//text()").to_s.split[0..100].join(' ') + "...").green
+        puts Rainbow(TTY::Link.link_to("Apply", "#{job.url}")).bright.blue
         end
     end
 

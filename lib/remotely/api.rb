@@ -31,8 +31,8 @@ class API
           hash["title"],
           hash["company_name"],
           hash["job_type"],
-          hash["url"],
-          hash["description"]
+          hash["description"],
+          hash["url"]
         ) 
         #  hash["description"]
         # info = Nokogiri::HTML(hash["description"])

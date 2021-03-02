@@ -2,6 +2,8 @@
 require 'pry'
 require 'httparty'
 require 'rainbow'
+require 'nokogiri'
+require 'tty-link'
 
 require_relative "./remotely/category" 
 require_relative "./remotely/job"

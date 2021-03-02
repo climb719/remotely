@@ -23,11 +23,11 @@ class CLI
       
         cat_obj = Category.all[index] 
        
-        puts Rainbow("Here are the jobs for #{cat_obj.name}:").green
+        puts Rainbow("Here are the jobs for #{cat_obj.name}:").magenta
         API.get_jobs(cat_obj)
        
         Job.list_jobs   
-      binding.pry
+      #binding.pry
         elsif input == "c"
            puts  Rainbow("Please enter the number for the categorty you want to search:").aqua
             Category.list_categories

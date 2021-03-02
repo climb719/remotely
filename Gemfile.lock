@@ -3,6 +3,7 @@ PATH
   specs:
     remotely (0.1.0)
       httparty
+      nokogiri (~> 1.11)
       rainbow
 
 GEM
@@ -18,9 +19,12 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0212)
     multi_xml (0.6.0)
+    nokogiri (1.11.1-x86_64-linux)
+      racc (~> 1.4)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    racc (1.5.2)
     rainbow (3.0.0)
     rake (13.0.3)
     rspec (3.10.0)
@@ -36,6 +40,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
+    tty-link (0.1.1)
 
 PLATFORMS
   x86_64-linux
@@ -43,11 +48,13 @@ PLATFORMS
 DEPENDENCIES
   bundler
   httparty (~> 0.18.1)
+  nokogiri (~> 1.11)
   pry
   rainbow
   rake (~> 13.0)
   remotely!
   rspec (~> 3.0)
+  tty-link
 
 BUNDLED WITH
    2.2.4
