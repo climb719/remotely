@@ -37,6 +37,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "httparty"
   spec.add_dependency "nokogiri", "~> 1.11"
   spec.add_dependency "rainbow"
+  spec.add_dependency "tty-link"
+  spec.add_dependency "word_wrap"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html

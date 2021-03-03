@@ -5,6 +5,8 @@ PATH
       httparty
       nokogiri (~> 1.11)
       rainbow
+      tty-link
+      word_wrap
 
 GEM
   remote: https://rubygems.org/
@@ -41,6 +43,7 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
     tty-link (0.1.1)
+    word_wrap (1.0.0)
 
 PLATFORMS
   x86_64-linux
@@ -54,7 +57,7 @@ DEPENDENCIES
   rake (~> 13.0)
   remotely!
   rspec (~> 3.0)
-  tty-link
+  tty-link (~> 0.1.0)
 
 BUNDLED WITH
    2.2.4

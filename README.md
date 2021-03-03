@@ -23,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-Open your terminal and navigate tp the projects base diectory. Run ./bin/remotely in your termial.
+Open your terminal and navigate tp the projects base diectory. Run bin/remotely in your termial.
 
 ## Development
 

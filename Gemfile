@@ -12,3 +12,4 @@ gem 'httparty', '~> 0.18.1'
 gem 'rainbow'
 gem 'nokogiri', '~> 1.11'
 gem 'tty-link', '~> 0.1.0'
+

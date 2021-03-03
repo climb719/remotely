@@ -9,8 +9,7 @@ class API
 
     def self.get_jobs(cat_obj)
         job_response = HTTParty.get("https://remotive.io/api/remote-jobs?category=#{cat_obj.name}")
-        job_response["jobs"].each do |hash| 
-          
+        job_response["jobs"].each do |hash|  
         Job.new(
           hash["title"],
           hash["company_name"],

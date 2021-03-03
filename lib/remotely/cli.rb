@@ -13,24 +13,32 @@ class CLI
         API.get_categories
         Category.list_categories
         puts ' '
-        puts Rainbow("Please enter the number for the category you want to search:").cyan
+        puts Rainbow("Please enter the number for the category you want to search or 'q' to quit:").cyan
         
         while input != "q" 
-            puts Rainbow("Type 'c' to return to job categories or 'q' to quit:").blueviolet
+        
             input = gets.strip
+          
         if input.to_i > 0 && input.to_i < 17
             index = input.to_i - 1
             cat_obj = Category.all[index] 
-            puts Rainbow("Here are the jobs for #{cat_obj.name}:").magenta
+            puts Rainbow("Getting the jobs for #{cat_obj.name}:").magenta
+            puts ' '
             sleep(1)
+            last = 10  
             API.get_jobs(cat_obj)
-            Job.list_jobs  
-            puts Rainbow("Type 'n' the next 25 jobs for #{cat_obj.name}:").magenta 
+            Job.list_jobs(1, last)  
+            puts Rainbow("Type 'n' the next 10 jobs for #{cat_obj.name}:").magenta
+            puts Rainbow("Enter a new category number, type 'c' to return to job categories, or 'q' to quit:").blueviolet
         elsif input == "n"
             sleep(1)
-            API.get_jobs(cat_obj)
-            Job.list_next_jobs  
-      # only want user to be able to press n once or make dynamic so will list more jobs? 
+            new_start = last + 1
+            last += 10 
+            Job.list_jobs(new_start, last) 
+            puts Rainbow("Type 'n' the next 10 jobs for #{cat_obj.name}:").magenta 
+            puts "All jobs for #{cat_obj.name} have been displayed. Type 'n' you'd like to return to the first 10 jobs." if last > Job.all.length
+            last = 0 if last > Job.all.length
+            puts Rainbow("Enter a new category number, type 'c' to return to job categories, or 'q' to quit:").blueviolet
         elsif input == "c"
             Category.list_categories 
             puts ' '
