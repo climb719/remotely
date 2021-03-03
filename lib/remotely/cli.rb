@@ -34,7 +34,7 @@ class CLI
         elsif input == "c"
             Category.list_categories 
             puts ' '
-            puts  Rainbow("Please enter the number for the category you want to search:").cyan
+            puts Rainbow("Please enter the number for the category you want to search:").cyan
         elsif input == "q"
             goodbye
         else
