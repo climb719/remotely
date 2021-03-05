@@ -21,5 +21,4 @@ class API
 
 end
 
-   #API.get_categories("https://remotive.io/api/remote-jobs/categories")
-   #API.get_jobs("https://remotive.io/api/remote-jobs?category=#{cat_obj.name}")
+

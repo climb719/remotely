@@ -52,7 +52,7 @@ DEPENDENCIES
   bundler
   httparty (~> 0.18.1)
   nokogiri (~> 1.11)
-  pry
+  pry (~> 0.14.0)
   rainbow
   rake (~> 13.0)
   remotely!
