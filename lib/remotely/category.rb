@@ -8,6 +8,10 @@ class Category
         @@all << self 
     end
 
+    def self.all=(arr)
+        @@all=arr
+    end
+
     def self.all
         @@all
     end

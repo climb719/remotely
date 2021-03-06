@@ -32,6 +32,7 @@ class CLI
             last = 0 if last > Job.all.length
             options
         elsif input == "c"
+            Category.all = []
             display_categories
         elsif input == "q"
             goodbye
@@ -45,7 +46,8 @@ class CLI
         API.get_categories
         Category.list_categories
         puts Rainbow(" \nPlease enter the number for the category you want to search or 'q' to quit:").cyan
-     end
+        
+    end
 
      def next_jobs(cat_obj)
         puts Rainbow("Type 'n' the next 10 jobs for #{cat_obj.name}:").magenta
