@@ -28,7 +28,7 @@ class CLI
             last += 10 
             Job.list_jobs(new_start, last) 
             next_jobs(cat_obj)
-            puts "All jobs for #{cat_obj.name} have been displayed. Type 'n' you'd like to return to the first 10 jobs." if last > Job.all.length
+            puts "All jobs for #{cat_obj.name} have been displayed. Type 'n' if you'd like to return to the first 10 jobs." if last > Job.all.length
             last = 0 if last > Job.all.length
             options
         elsif input == "c"
